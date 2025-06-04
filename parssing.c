@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parssing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:13:22 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/06/01 20:48:27 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:58:50 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static const char *validate_input(const char *str)
 		str++;
 	else if (*str == '-')
 		eroor_exit("Error: Negative numbers are not allowed.\n");
-	if (*str >= '9' && *str <= '0')
+	if (!(*str >= '0' && *str <= '9'))
 		eroor_exit("Error: Invalid character in input.\n");
 	number = str;
 	while (*str >= '0' && *str <= '9')
