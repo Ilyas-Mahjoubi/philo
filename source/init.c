@@ -6,7 +6,7 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:52:58 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/06/04 23:28:51 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/06/05 18:52:55 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	init_philos(t_table *table)
 
 	table->philos = malloc(sizeof(t_philo) * table->philo_nbr);
 	if (!table->philos)
-		roor_exit("Error: Memory allocation failed for philosophers.\n");
+		eroor_exit("Error: Memory allocation failed for philosophers.\n");
 	i = 0;
 	// initialize each philo
 	while (i < table->philo_nbr)
@@ -45,7 +45,7 @@ static void	init_philos(t_table *table)
 		table->philos[i].eat_count = 0;
 		table->philos[i].full = false;
 		table->philos[i].last_meal_time = 0;
-		table->philos->table = table; // pointer back to table
+		table->philos[i].table = table; // pointer back to table
 		table->philos[i].left_fork = &table->forks[i];
 		table->philos[i].right_fork = &table->forks[(i + 1) % table->philo_nbr];
 		i++;
@@ -54,8 +54,12 @@ static void	init_philos(t_table *table)
 
 void init_table(t_table *table)
 {
-	table->start_simulation = 0;
-	table->end_simulation = false;
-	init_forks(table);
-	init_philos(table);
+    table->start_simulation = 0;
+    table->end_simulation = false;
+    if (pthread_mutex_init(&table->print_mutex, NULL) != 0)
+        eroor_exit("Error: Failed to initialize print mutex.\n");
+    if (pthread_mutex_init(&table->meal_mutex, NULL) != 0)  // ADD THIS
+        eroor_exit("Error: Failed to initialize meal mutex.\n");
+    init_forks(table);
+    init_philos(table);
 }
