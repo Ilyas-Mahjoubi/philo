@@ -6,9 +6,13 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 19:47:06 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/06/05 18:51:44 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/06/07 14:29:52 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#ifndef PHILO_H
+# define PHILO_H
 
 #include <unistd.h>
 #include <stdio.h>
@@ -76,3 +80,5 @@ void init_table(t_table *table);
 void *monitor_deaths(void *arg);
 bool all_philosophers_full(t_table *table);
 void *monitor_deaths(void *arg);
+
+#endif

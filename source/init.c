@@ -6,11 +6,11 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:52:58 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/06/05 18:52:55 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/06/07 18:53:47 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 static void	init_forks(t_table *table)
 {
@@ -20,7 +20,6 @@ static void	init_forks(t_table *table)
 	if (!table->forks)
 		eroor_exit("Error: Memory allocation failed for forks.\n");
 	i = 0;
-	// initialize each fork
 	while (i < table->philo_nbr)
 	{
 		if (pthread_mutex_init(&table->forks[i].fork, NULL) != 0)
@@ -38,7 +37,6 @@ static void	init_philos(t_table *table)
 	if (!table->philos)
 		eroor_exit("Error: Memory allocation failed for philosophers.\n");
 	i = 0;
-	// initialize each philo
 	while (i < table->philo_nbr)
 	{
 		table->philos[i].id = i + 1; // philos are numb

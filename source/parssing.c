@@ -6,11 +6,11 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:13:22 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/06/05 19:36:52 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/06/07 18:54:00 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 
 static const char *validate_input(const char *str)
@@ -19,7 +19,6 @@ static const char *validate_input(const char *str)
 	const char *number;
 	
 	len = 0;
-	// (1) skip the spces
 	while (*str == ' ' || *str == '\t' || *str == '\n')
 		str++;
 	if (*str == '+')

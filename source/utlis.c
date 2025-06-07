@@ -6,11 +6,11 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:06:07 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/06/04 22:59:59 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/06/07 14:28:24 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 void eroor_exit(const char *error)
 {
