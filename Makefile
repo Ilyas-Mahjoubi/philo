@@ -10,7 +10,9 @@ SRC =   $(SRCDIR)/main.c \
 		$(SRCDIR)/init.c \
 		$(SRCDIR)/parssing.c \
 		$(SRCDIR)/routine.c \
-		$(SRCDIR)/utlis.c
+		$(SRCDIR)/utlis.c \
+		$(SRCDIR)/routine_utilis.c \
+		$(SRCDIR)/dinner.c \
 
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
